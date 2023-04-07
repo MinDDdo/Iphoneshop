@@ -1,0 +1,45 @@
+<p>signup works!</p>
+<div class="vh-100 w-100 position-relative">
+    <div class="position-absolute slide-bottom" 
+        style="left: 100px; top: 100px; cursor: pointer;">
+        <h2>Back</h2>
+    </div>
+    <form 
+        class="form d-flex flex-column gap-3 shadow rounded p-5 position-absolute
+        translate-middle top-50 start-50 " 
+        style="width: 500px;"
+        [formGroup]= "signupForm"
+        (ngSubmit)="onSubmit()">
+    
+        <h3 class="mb-4 slide-bottom">Signup</h3>
+    
+        <input  
+            type="text" 
+            placeholder="fristname" 
+            class="form-control slide-bottom "
+            formControlName="fristname">
+    
+        <input 
+            type="text"
+            placeholder="lastname" 
+            class="form-control slide-bottom "
+            formControlName="lastname">
+    
+        <input 
+            type="email" 
+            placeholder="email" 
+            class="form-control slide-bottom "
+            formControlName="email">
+    
+        <input 
+            type="password" 
+            placeholder="password" 
+            class="form-control slide-bottom "
+            formControlName="password">
+    
+        <button type="submit" class="btn btn-dark">
+            submit
+        </button>
+    
+    </form>
+</div>
