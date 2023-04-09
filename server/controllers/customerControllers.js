@@ -22,10 +22,10 @@ exports.login = async(req, res) => {
 
 exports.signup = async(req, res) => {
     try {
-        const { fristname, lastname, email, password } = req.body;
+        const { firstname, lastname, email, password } = req.body;
 
         const newCustomer = await Customer.create({
-            fristname: fristname,
+            firstname: firstname,
             lastname: lastname,
             email: email,
             password: password
@@ -45,14 +45,14 @@ exports.signup = async(req, res) => {
 exports.updateAccount = async(req, res) => {
     try{
         const { id } = req.params;
-        const { fristname, lastname, email } = req.body;
+        const { firstname, lastname, email } = req.body;
 
         const account = await Customer.findOne({_id: id})
 
         if(!account) throw Error ('Not found account');
 
         const data = {
-            fristname: fristname,
+            firstname: firstname,
             lastname: lastname
         }
         await Customer.updateOne({_id: id}, data);

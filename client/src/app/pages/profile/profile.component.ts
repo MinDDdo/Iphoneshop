@@ -16,6 +16,7 @@ export class ProfileComponent {
     private cusService: CustomerService
   ){
     this.customer = this.cusService.getCustomer();
+    console.log(this.customer)
   }
 
 }

@@ -33,7 +33,7 @@ export class LoginComponent {
     this.cusService.login(data)
     .subscribe({
       next: (data) => {
-        
+        console.log(data.data)
         this.cusService.setCustomer(data.data);
         
         this.router.navigateByUrl('/profile');

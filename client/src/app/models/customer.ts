@@ -1,6 +1,6 @@
 export interface ICustomer {
     _id: string,
-    fristname: string,
+    firstname: string,
     lastname: string,
     email: string;
 }

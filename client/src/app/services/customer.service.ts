@@ -17,7 +17,7 @@ export class CustomerService {
   setCustomer(data: any) {
     if (data) {
       localStorage.setItem('_id', data._id);
-      localStorage.setItem('fristname', data.fristname);
+      localStorage.setItem('firstname', data.firstname);
       localStorage.setItem('lastname', data.lastname);
       localStorage.setItem('email', data.email);
 
@@ -26,13 +26,13 @@ export class CustomerService {
 
   getCustomer():any {
     const _id = localStorage.getItem('_id');
-    const fname = localStorage.getItem('fristname');
+    const fname = localStorage.getItem('firstname');
     const lname = localStorage.getItem('lastname');
     const email = localStorage.getItem('email');
 
     const data = {
       _id: _id,
-      fristname: fname,
+      firstname: fname,
       lastname: lname,
       email: email
     };
