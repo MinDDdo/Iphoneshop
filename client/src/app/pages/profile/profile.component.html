@@ -5,7 +5,12 @@
 
             <ul class="d-flex gap-4 align-items-center m-0">
                 <li class="list-unstyled" style="cursor: pointer;">HOME</li>
-                <li class="list-unstyled" style="cursor: pointer;">PROUDUCTS</li>
+                <li 
+                    class="list-unstyled" 
+                    style="cursor: pointer;"
+                    routerLink="/productshow"
+                    >PROUDUCTS
+                </li>
                 <li class="list-unstyled">
                     <button class="btn btn-dark">logout</button>
                 </li>
@@ -14,8 +19,18 @@
     </header>
 
     <div class="d-flex-colum gap-3 mt-4">
+        <img 
+        [src]="customer.image" 
+        alt="profile image"
+        class="rounded-circle"
+        width="75"
+        height="75"
+        style="object-fit: cover;"
+    />
         <h5> firstname: {{customer.firstname}}</h5>
         <h5> lastname: {{customer.lastname}}</h5>
         <h5> e-mail: {{customer.email}}</h5>
+
+
     </div>
 </div>

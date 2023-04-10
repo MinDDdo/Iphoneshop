@@ -22,13 +22,14 @@ exports.login = async(req, res) => {
 
 exports.signup = async(req, res) => {
     try {
-        const { firstname, lastname, email, password } = req.body;
+        const { firstname, lastname, email, password,image } = req.body;
 
         const newCustomer = await Customer.create({
             firstname: firstname,
             lastname: lastname,
             email: email,
-            password: password
+            password: password,
+            image
         });
 
         res.status(200).send({
@@ -45,7 +46,7 @@ exports.signup = async(req, res) => {
 exports.updateAccount = async(req, res) => {
     try{
         const { id } = req.params;
-        const { firstname, lastname, email } = req.body;
+        const { firstname, lastname, image } = req.body;
 
         const account = await Customer.findOne({_id: id})
 
@@ -53,7 +54,8 @@ exports.updateAccount = async(req, res) => {
 
         const data = {
             firstname: firstname,
-            lastname: lastname
+            lastname: lastname,
+            image
         }
         await Customer.updateOne({_id: id}, data);
 

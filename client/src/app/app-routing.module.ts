@@ -4,13 +4,16 @@ import { LoginComponent } from './pages/login/login.component';
 import { ProductshowComponent } from './pages/productshow/productshow.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/productshow' },
   { path: 'login', component: LoginComponent },
   { path: 'productshow', component: ProductshowComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'signup', component: SignupComponent }
+  { path: 'signup', component: SignupComponent },
+  { path: 'product-detail/:id', component: ProductDetailComponent }
+  
 ];
 
 @NgModule({

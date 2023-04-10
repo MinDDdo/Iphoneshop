@@ -20,6 +20,7 @@ export class CustomerService {
       localStorage.setItem('firstname', data.firstname);
       localStorage.setItem('lastname', data.lastname);
       localStorage.setItem('email', data.email);
+      localStorage.setItem('image', data.image);
 
     }
   }
@@ -29,12 +30,14 @@ export class CustomerService {
     const fname = localStorage.getItem('firstname');
     const lname = localStorage.getItem('lastname');
     const email = localStorage.getItem('email');
+    const image = localStorage.getItem('image');
 
     const data = {
       _id: _id,
       firstname: fname,
       lastname: lname,
-      email: email
+      email: email,
+      image: image
     };
 
     return data;
