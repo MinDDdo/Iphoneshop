@@ -3,13 +3,14 @@ const handleError = require('../helpers/handleError');
 
 exports.createproduct = async(req, res) => {
     try{
-        const { name, price, quantity, image } = req.body;
+        const { name, price, quantity, image , category } = req.body;
 
         const data = {
             name: name,
             price: price,
             quantity: quantity,
-            image: image
+            image: image,
+            category
         };
 
         await Product.create(data);

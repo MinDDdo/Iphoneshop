@@ -9,7 +9,14 @@ import { IProduct } from 'src/app/models/product';
   styleUrls: ['./productshow.component.css']
 })
 export class ProductshowComponent implements OnInit {
-  products: IProduct[] = [];
+  
+  ipad:IProduct[] = [];
+  iphone:IProduct[] = [];
+  watch:IProduct[] = [];
+  airpods:IProduct[] = [];
+
+  products:IProduct[] = [];
+
 
   constructor(
     private router: Router,
@@ -19,20 +26,35 @@ export class ProductshowComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadProducts();
+   
   }
 
   loadProducts() {
     this.productService.getProducts()
       .subscribe({
         next: ({ data }) => {
-          this.products = data;
+          this.ipad = data.filter((d: any) => d.category === 'ipad');
+          this.iphone = data.filter((d: any) => d.category === 'iphone');
+          this.watch = data.filter((d: any) => d.category === 'watch');
+          this.airpods = data.filter((d: any) => d.category === 'airpods');
+
+          this.products = this.ipad;
         },
         error: (err) => {
           console.log(err);
         }
       })
+     
   }
+  
 
+  ProductShow(show: string){
+    if(show === 'ipad') this.products = this.ipad;
+    if(show === 'iphone') this.products =  this.iphone;
+    if(show === 'watch') this.products = this.watch;
+    if(show === 'airpods') this.products =  this.airpods;
+   
+  }
 
 
 }
