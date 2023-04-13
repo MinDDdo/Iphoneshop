@@ -38,6 +38,21 @@ exports.getAllproduct = async(req, res) => {
     }
 };
 
+exports.getProductById = async(req,res) => {
+    try {
+        const {id} = req.params;
+
+        const product = await Product.findById({_id: id});
+
+        res.status(200).send({
+            status: 'success',
+            data: product
+        })
+    } catch (err){
+        handleError.product(err,res);
+    }
+}
+
 exports.deleteproduct = async(req, res) => {
     try{
         const { id } = req.params;

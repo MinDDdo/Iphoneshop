@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable,catchError,retry,throwError} from 'rxjs'; 
+import { Observable, catchError, retry, throwError } from 'rxjs';
 import { api } from './api.config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  URL: string= 'product'
+  URL: string = 'product'
 
-  constructor(private http: HttpClient){}
+  constructor(private http: HttpClient) { }
 
   getProducts(): Observable<any> {
     return this.http.get<any>(
@@ -19,7 +19,18 @@ export class ProductService {
       catchError(this.handleError)
     )
   }
-  
+
+  getProductByID(id: string): Observable<any> {
+    return this.http.get<any>(
+
+      api.baseURL + this.URL + '/' + id
+    ).pipe(
+      retry(1),
+      catchError(this.handleError)
+    );
+
+  }
+
   handleError(error: any) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
@@ -37,5 +48,5 @@ export class ProductService {
       return errorMessage;
     });
   }
-  
+
 }

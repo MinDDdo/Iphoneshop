@@ -1,1 +1,110 @@
-<p>product-detail works!</p>
+<header class="bg-light shadow">
+    <nav class=" py-2 d-flex justify-content-between align-items-center container mx-autto">
+    <div class="d-flex gap-3 align-items-center">
+        <h2 class="m-0 p-0 fw-semibold">LOGO</h2>
+        <h5 
+            class="m-0 " 
+            style=" font-weight: 300; cursor: pointer;"
+            
+            >iPad 
+        </h5>
+
+        <h5 
+            class="m-0 " 
+            style=" font-weight: 300; cursor: pointer;"
+            
+            >iPhone 
+        </h5>
+
+        <h5 
+            class="m-0 " 
+            style=" font-weight: 300; cursor: pointer;"
+            
+            >Watch
+        </h5>
+
+        <h5 
+            class="m-0 " 
+            style=" font-weight: 300; cursor: pointer;"
+            
+            >AirPods
+         </h5>
+        
+    </div>
+
+
+        <ul class="d-flex gap-4 align-items-center m-0">
+            <li class="list-unstyled" style="cursor: pointer;">HOME</li>
+            <li 
+                class="list-unstyled" 
+                style="cursor: pointer;"
+                routerLink="/productshow"
+                >PROUDUCTS
+            </li>
+            <li class="list-unstyled">
+                <button class="btn btn-dark">logout</button>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+
+<div class="container mx-auto mt-5" >
+    <div class="row rounded shadow p-4 " *ngFor="let p of product">
+            <div class="col-5 aliqn-self-center "> 
+                <img 
+                    [src]="p.image"
+                    alt="product image"
+                    class="w-100"
+                    height="500"
+                    style="object-fit: cover;"
+                />
+            </div>
+
+        <div class="col-7 p-5">
+            <h3 class="" style="font-size: 64px; font-weight: 400;">{{p.name}}</h3>
+            
+            <div class="d-flex justify-content-between" >
+                <h3 class="" style="font-weight: 400;"> {{p.price | currency: 'thb':'฿': '1.2-2'}} </h3>
+                <button class="btn btn-primary text-white rounded"> buy </button>
+            </div>
+            <div class="d-flex flex-column gap-3 mt-5">
+                <div class="d-flex gap-5 align-items-center">
+                    <img src="../../../assets/M2-icon.png" alt="detail image" width="75" height="75"/>
+                    <h4 class="m-0">test</h4>
+                </div>
+                <div class="d-flex gap-5 align-items-center">
+                    <img src="../../../assets/came-icon.png" alt="detail image" width="75" height="75"/>
+                    <h4 class="m-0">test</h4>
+                </div>
+                <div class="d-flex gap-5 align-items-center">
+                    <img src="../../../assets/came-rel-icon.png" alt="detail image" width="75" height="75"/>
+                    <h4 class="m-0">test</h4>
+                </div>
+                <div class="d-flex gap-5 align-items-center">
+                    <img src="../../../assets/face-icon.png" alt="detail image" width="75" height="75"/>
+                    <h4 class="m-0">test</h4>
+                </div>
+                <div class="d-flex gap-5 align-items-center">
+                    <img src="../../../assets/usb-icon.png" alt="detail image" width="75" height="75"/>
+                    <h4 class="m-0">test</h4>
+                </div>
+                <div class="d-flex gap-5 align-items-center">
+                    <img src="../../../assets/cell-icon.png" alt="detail image" width="75" height="75"/>
+                    <h4 class="m-0">test</h4>
+                </div>
+                <div class="d-flex gap-5 align-items-center">
+                    <img src="../../../assets/pencil-icon.png" alt="detail image" width="75" height="75"/>
+                    <h4 class="m-0">test</h4>
+                </div>
+                <div class="d-flex gap-5 align-items-center">
+                    <img src="../../../assets/key-icon.png" alt="detail image" width="75" height="75"/>
+                    <h4 class="m-0">test</h4>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
