@@ -10,6 +10,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { ProductshowComponent } from './pages/productshow/productshow.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { OrderDetailComponent } from './pages/order-detail/order-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
     ProfileComponent,
     ProductshowComponent,
     SignupComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    OrderDetailComponent
   ],
   imports: [
     BrowserModule,
