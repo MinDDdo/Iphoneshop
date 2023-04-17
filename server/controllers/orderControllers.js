@@ -2,18 +2,18 @@ const Order = require('../models/orderModels');
 const Product = require('../models/productModels')
 const handleError = require('../helpers/handleError');
 
-exports.createorder = async(req, res) => {
-    try{
-        const { cus_id, items } =  req.body;
+exports.createOrder = async(req, res) => {
+    try {
+        const { cust_id, items  } = req.body;
 
         const product_ids = [];
-        items.map(p =>  product_ids.push(p.product_id));
+        items.map(p => product_ids.push(p.product_id));
 
         let total_price = 0;
         for (let id of product_ids) {
-            const product = await Product.findById({_id: id}).select('price quantity');
+            const product = await Product.findById({ _id: id }).select('price quantity');
 
-            if(product.quantity <= 0) throw Error('Product are not enough');
+            if (product.quantity <= 0) throw Error('Product are not enough.');
 
             total_price += Number(product.price);
         }
@@ -21,25 +21,22 @@ exports.createorder = async(req, res) => {
         const order_date = new Date(Date.now()).toISOString();
 
         await Order.create({
-            customer_id: cus_id,
+            customer_id: cust_id,
             order_date: order_date,
             items: items,
             total_price: total_price
         });
 
         for (let { product_id, quantity } of items) {
-            await Product.updateOne({_id: product_id}, {
+            await Product.updateOne({ _id: product_id }, {
                 $inc: { quantity: -quantity }
             });
         }
 
         res.status(204).send();
-
-    }catch (err) {
+    } catch (err) {
         handleError.order(err, res);
     }
-
-
 };
 
 exports.getorderBycustomerId = async(req, res) => {
