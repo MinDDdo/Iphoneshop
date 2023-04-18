@@ -1,11 +1,16 @@
 <header class="bg-light shadow">
     <nav class=" py-2 d-flex justify-content-between align-items-center container mx-autto">
     <div class="d-flex gap-3 align-items-center">
-        <h2 class="m-0 p-0 fw-semibold">LOGO</h2>
+        <img 
+            src="../../../assets/logo.png"
+            alt="logo"
+            width="40"
+            height="50"
+        />
         <h5 
             class="m-0 " 
             style=" font-weight: 300; cursor: pointer;"
-            
+            routerLink="/productshow"
             >iPad 
         </h5>
 
@@ -34,16 +39,32 @@
 
 
         <ul class="d-flex gap-4 align-items-center m-0">
-            <li class="list-unstyled" style="cursor: pointer;">HOME</li>
+            <li class="list-unstyled" style="cursor: pointer;">
+                <h5 class="m-0 " style="font-weight: 300;">Home</h5>
+            </li>
             <li 
                 class="list-unstyled" 
                 style="cursor: pointer;"
                 routerLink="/productshow"
-                >PROUDUCTS
+            >
+                <h5 class="m-0 " style="font-weight: 300;">Products</h5>
             </li>
-            <li class="list-unstyled">
-                <button class="btn btn-dark">logout</button>
+
+            <li 
+                class="list-unstyled" 
+                style="cursor: pointer;"
+                routerLink="/profile"
+            >
+                <h5 class="pi pi-user " style="font-weight: 300;"></h5>
             </li>
+
+            <button 
+                class="btn  btn-danger d-flex align-items-center justify-content-between gap-2"
+                (click)="onClickLogout()"
+            >
+            logout
+                <i class="pi pi-arrow-right" style="font-size: 1rem;"></i>
+            </button>
         </ul>
     </nav>
 </header>
@@ -136,4 +157,36 @@
     </div>
 </div>
 
-<h1 *ngIf="showSuccess"> Buy success</h1> 
+<div *ngIf="showSuccess" class="container mx-auto position-relative"> 
+    <div 
+        class="d-flex justify-content-center  mt-5 scale-up-center"  >
+
+        <div 
+            class="bg-danger text-white rounded p-5 shadow mt-5 position-relative 
+             " 
+            style="width: 34rem; height: 16rem; "
+        >
+            <i 
+                class="pi pi-check text-white p-4 bg-dark rounded-circle position-absolute
+                start-50 translate-middle" 
+                 style="font-size: 2rem; top: -2px;">
+            </i>
+
+            <h3 class="text-center mb-4 fw-normal mt-2">การสั่งซื้อสำเร็จ</h3>
+            <p class="text-center mb-5">
+                ได้รับข้อมูลสั่งซื้อเรียบร้อยแล้ว เราจะเร่งดำเนินการจัดส่งสินค้าโดยเร็ว !
+            </p>
+    
+            <button 
+                class="btn btn-light d-flex gap-3 w-100 align-items-center 
+                justify-content-center"
+                routerLink="/productshow"
+            >
+    
+                <i class="pi pi-home" style="font-size: 1rem;"></i>
+                <p class="m-0">กลับไปหน้าหลัก</p>
+            </button>
+        </div>
+    </div>
+
+</div> 

@@ -1,35 +1,83 @@
-<p>login works!</p>
-<div class="vh-100 w-100 position-relative">
-    <div class="position-absolute slide-bottom" 
-        style="left: 100px; top: 100px; cursor: pointer;">
-        <h2>Back</h2>
+
+
+<div 
+    class=" d-flex flex-column align-items-center gap-4 py-5" 
+    style="background-color: var(--color-grey-1);"
+>
+    <div 
+        class="position-absolute slide-bottom bg-danger text-white rounded py-2 px-3 
+        d-flex gap-2 align-items-center" 
+        style="left: 100px; top: 100px; cursor: pointer;"
+        routerLink="/productshow"
+    >
+        <i class="pi pi-arrow-left fw-semibold" style="font-size: 1rem;"></i>
+        <p class="m-0">Back</p>
     </div>
+
+    <div class="p-1"></div>
+
+    <img 
+        src="../../../assets/logo.png" 
+        alt="logo"
+        class="mt-5 slide-bottom"
+        width="70"
+        height="75"
+    />
+
     <form 
-        class="form d-flex flex-column gap-3 shadow rounded p-5 position-absolute
-        translate-middle top-50 start-50 " 
-        style="width: 500px;"
+        class="form d-flex flex-column gap-3 shadow rounded  p-5 align-items-center slide-bottom " 
+        style="width: 500px; background-color: #fff;"
         [formGroup]= "loginForm"
         (ngSubmit)="onSubmit()">
     
-        <h3 class="mb-4 slide-bottom">login</h3>
-    
-    
-        <input 
-            type="email" 
-            placeholder="email" 
-            class="form-control slide-bottom "
-            formControlName="email">
-    
-        <input 
-            type="password" 
-            placeholder="password" 
-            class="form-control slide-bottom "
-            formControlName="password">
-    
-        <button type="submit" class="btn btn-dark">
+        <h3 class="mb-4 ">Login</h3>
+
+        <div class="row align-items-center w-100">
+            <div class="col-3 p-0">
+                <P class="text-start m-0">Email</P>
+            </div>
+
+            <div class="col-9 p-0">
+                <input 
+                type="email" 
+                placeholder="" 
+                class="form-control slide-bottom "
+                formControlName="email">  
+            </div>
+        </div>
+
+        <div class="row align-items-center w-100 mb-4">
+            <div class="col-3 p-0">
+                <P class="text-start m-0">Password</P>
+            </div>
+
+            <div class="col-9 p-0">
+                <input 
+                    type="password" 
+                    placeholder="" 
+                    class="form-control slide-bottom "
+                     formControlName="password">
+            </div>
+        </div>
+
+        <button 
+            type="submit" 
+            class="btn btn-danger w-100 "
+        >
             submit
         </button>
     
     </form>
+
+    <p class="slide-bottom">
+        not a member? 
+        <span 
+            class="text-primary "
+            style="text-decoration: underline; cursor: pointer;"
+            routerLink="/signup"
+        >
+            Sign up 
+    </span>
+    </p>
 </div>
 

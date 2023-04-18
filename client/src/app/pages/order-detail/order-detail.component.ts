@@ -131,4 +131,8 @@ export class OrderDetailComponent implements OnInit {
       })
     }
   }
+  onClickLogout() {
+    this.custService.removeCustomer();
+    this.router.navigateByUrl('/login');
+  }
 }

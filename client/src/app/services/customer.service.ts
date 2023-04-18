@@ -44,7 +44,7 @@ export class CustomerService {
   }
 
   removeCustomer() {
-    localStorage.removeItem('cus_data');
+    localStorage.clear();
   }
 
   signup(body: any): Observable<any> {

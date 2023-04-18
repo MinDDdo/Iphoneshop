@@ -4,6 +4,7 @@ import { ProductService } from 'src/app/services/product.service';
 import { IProduct } from 'src/app/models/product';
 import { Router } from '@angular/router';
 import { OrderService } from 'src/app/services/order.service';
+import { CustomerService } from 'src/app/services/customer.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -19,7 +20,8 @@ export class ProductDetailComponent implements OnInit {
     private activeRoute: ActivatedRoute,
     private productService: ProductService,
     private router: Router,
-    private orderService: OrderService
+    private orderService: OrderService,
+    private custService: CustomerService
   ){
     this.id = this.activeRoute.snapshot.paramMap.get('id');
     console.log(this.id);
@@ -49,5 +51,9 @@ export class ProductDetailComponent implements OnInit {
     this.orderService.addOrders(this.product[0]);
 
     this.router.navigateByUrl('/order-detail')
+  }
+  onClickLogout() {
+    this.custService.removeCustomer();
+    this.router.navigateByUrl('/login');
   }
 } 

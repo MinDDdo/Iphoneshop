@@ -1,36 +1,82 @@
-<div class=" w-100 vh-100">
-    <header class="bg-light shadow">
-        <nav class=" py-2 d-flex justify-content-between align-items-center container mx-autto">
-            <h2 class="m-0 p-0 fw-semibold">LOGO</h2>
+<header class="bg-light shadow">
+    <nav class=" py-2 d-flex justify-content-between align-items-center container mx-autto">
+        <h2 class="m-0 p-0 fw-semibold">LOGO</h2>
 
-            <ul class="d-flex gap-4 align-items-center m-0">
-                <li class="list-unstyled" style="cursor: pointer;">HOME</li>
-                <li 
-                    class="list-unstyled" 
-                    style="cursor: pointer;"
-                    routerLink="/productshow"
-                    >PROUDUCTS
-                </li>
-                <li class="list-unstyled">
-                    <button class="btn btn-dark">logout</button>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-    <div class="d-flex-colum gap-3 mt-4">
-        <img 
-        [src]="customer.image" 
-        alt="profile image"
-        class="rounded-circle"
-        width="75"
-        height="75"
-        style="object-fit: cover;"
-    />
-        <h5> firstname: {{customer.firstname}}</h5>
-        <h5> lastname: {{customer.lastname}}</h5>
-        <h5> e-mail: {{customer.email}}</h5>
-
-
+        <ul class="d-flex gap-4 align-items-center m-0">
+            <li class="list-unstyled" style="cursor: pointer;">HOME</li>
+            <li 
+                class="list-unstyled" 
+                style="cursor: pointer;"
+                routerLink="/productshow"
+                >PROUDUCTS
+            </li>
+            <li class="list-unstyled">
+                <button 
+                    class="btn  btn-danger d-flex align-items-center justify-content-between gap-2"
+                    (click)="onClickLogout()"
+                >
+                logout
+                    <i class="pi pi-arrow-right" style="font-size: 1rem;"></i>
+                </button>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div 
+    class=""
+    style="background-color: var(--color-grey-1); height: 92vh;"
+>
+    <div 
+        class="container d-flex  flex-column align-items-center "
+        style="background-color: var(--color-grey-1);"
+    >
+        <div 
+            class="container mx-auto d-flex flex-column align-items-center"
+        >
+        </div>
+            <div class="p-3 mb-2"></div>
+    
+        <div 
+            class="d-flex flex-column gap-3 mt-5 p-5 align-items-center rounded shadow slide-bottom"
+            style="background-color: #fff; width: 28rem;"
+        >
+            <h3 class="fw-normal text-danger">Profile</h3>
+            <img 
+            [src]="customer.image" 
+            alt="profile image"
+            class="rounded-circle"
+            width="75"
+            height="75"
+            style="object-fit: cover;"
+        />
+        <div class="row w-100">
+            <div class="col-3 p-0">
+                <h5 class="text-start fw-normal">Firstname</h5>
+            </div>
+            <div class="col-9 p-0 h5 px-5 fw-normal" >: {{customer.firstname}}</div>
+        </div>
+    
+        <div class="row w-100">
+            <div class="col-3 p-0">
+                <h5 class="text-start fw-normal">Lastname</h5>
+            </div>
+            <div class="col-9 p-0 h5 px-5 fw-normal" >: {{customer.lastname}}</div>
+        </div>
+    
+        <div class="row w-100">
+            <div class="col-3 p-0">
+                <h5 class="text-start fw-normal">Email</h5>
+            </div>
+            <div class="col-9 p-0 h5 px-5 fw-normal" >: {{customer.email}}</div>
+        </div>
+    
+            
+        
+         </div>
+    
+    
     </div>
+
 </div>
+
+

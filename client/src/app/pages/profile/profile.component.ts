@@ -19,4 +19,9 @@ export class ProfileComponent {
     console.log(this.customer)
   }
 
+  onClickLogout() {
+    this.cusService.removeCustomer();
+    this.router.navigateByUrl('/login');
+  }
+
 }

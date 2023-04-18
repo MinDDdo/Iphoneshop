@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { Router } from '@angular/router';
 import { IProduct } from 'src/app/models/product';
+import { CustomerService } from 'src/app/services/customer.service';
 
 @Component({
   selector: 'app-productshow',
@@ -20,7 +21,8 @@ export class ProductshowComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private productService: ProductService
+    private productService: ProductService,
+    private custService: CustomerService
 
   ) { }
 
@@ -54,6 +56,10 @@ export class ProductshowComponent implements OnInit {
     if(show === 'watch') this.products = this.watch;
     if(show === 'airpods') this.products =  this.airpods;
    
+  }
+  onClickLogout() {
+    this.custService.removeCustomer();
+    this.router.navigateByUrl('/login');
   }
 
 

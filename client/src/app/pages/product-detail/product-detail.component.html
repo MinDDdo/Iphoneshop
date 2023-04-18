@@ -1,11 +1,16 @@
 <header class="bg-light shadow">
     <nav class=" py-2 d-flex justify-content-between align-items-center container mx-autto">
     <div class="d-flex gap-3 align-items-center">
-        <h2 class="m-0 p-0 fw-semibold">LOGO</h2>
+        <img 
+            src="../../../assets/logo.png"
+            alt="logo"
+            width="40"
+            height="50"
+        />
         <h5 
             class="m-0 " 
             style=" font-weight: 300; cursor: pointer;"
-            
+            routerLink="/productshow"
             >iPad 
         </h5>
 
@@ -34,16 +39,32 @@
 
 
         <ul class="d-flex gap-4 align-items-center m-0">
-            <li class="list-unstyled" style="cursor: pointer;">HOME</li>
+            <li class="list-unstyled" style="cursor: pointer;">
+                <h5 class="m-0 " style="font-weight: 300;">Home</h5>
+            </li>
             <li 
                 class="list-unstyled" 
                 style="cursor: pointer;"
                 routerLink="/productshow"
-                >PROUDUCTS
+            >
+                <h5 class="m-0 " style="font-weight: 300;">Products</h5>
             </li>
-            <li class="list-unstyled">
-                <button class="btn btn-dark">logout</button>
+
+            <li 
+                class="list-unstyled" 
+                style="cursor: pointer;"
+                routerLink="/profile"
+            >
+                <h5 class="pi pi-user " style="font-weight: 300;"></h5>
             </li>
+
+            <button 
+                class="btn  btn-danger d-flex align-items-center justify-content-between gap-2"
+                (click)="onClickLogout()"
+            >
+            logout
+                <i class="pi pi-arrow-right" style="font-size: 1rem;"></i>
+            </button>
         </ul>
     </nav>
 </header>
@@ -66,7 +87,7 @@
             <h3 class="" style="font-size: 64px; font-weight: 400;">{{p.name}}</h3>
             
             <div class="d-flex justify-content-between" >
-                <h3 class="" style="font-weight: 400;"> {{p.price | currency: 'thb':'฿': '1.2-2'}} </h3>
+                <h3 class="" style="font-weight: 400;"> {{p.price | currency: 'th50b':'฿': '1.2-2'}} </h3>
                 
                 <button 
                 class="btn btn-primary text-white rounded"
@@ -77,36 +98,92 @@
             </div>
             <div class="d-flex flex-column gap-3 mt-5">
                 <div class="d-flex gap-5 align-items-center">
-                    <img src="../../../assets/M2-icon.png" alt="detail image" width="75" height="75"/>
-                    <h4 class="m-0">test</h4>
+                    <img 
+                        src="../../../assets/M2-icon.png" 
+                        alt="detail image" 
+                        width="50" 
+                        height="50"
+                        style="object-fit: cover;"
+                    />
+                    <h4 class="m-0 fw-normal">ชิป Apple M2</h4>
                 </div>
+
                 <div class="d-flex gap-5 align-items-center">
-                    <img src="../../../assets/came-icon.png" alt="detail image" width="75" height="75"/>
-                    <h4 class="m-0">test</h4>
+                    <img 
+                        src="../../../assets/came-icon.png" 
+                        alt="detail image" 
+                        width="50" 
+                        height="50"
+                        style="object-fit: cover;"
+                    />
+                    <h4 class="m-0">กล้องหน้าอัลตร้าไวด์ความละเอียด 12MP</h4>
                 </div>
+
                 <div class="d-flex gap-5 align-items-center">
-                    <img src="../../../assets/came-rel-icon.png" alt="detail image" width="75" height="75"/>
-                    <h4 class="m-0">test</h4>
+                    <img 
+                        src="../../../assets/came-rel-icon.png" 
+                        alt="detail image" 
+                        width="50" 
+                        height="50"
+                        style="object-fit: cover;"
+                    />
+                    <h4 class="m-0">กล้องไวด์ความละเอียด 12MP
+                        กล้องอัลตร้าไวด์ความละเอียด 10MP</h4>
                 </div>
+
                 <div class="d-flex gap-5 align-items-center">
-                    <img src="../../../assets/face-icon.png" alt="detail image" width="75" height="75"/>
-                    <h4 class="m-0">test</h4>
+                    <img 
+                        src="../../../assets/face-icon.png" 
+                        alt="detail image" 
+                        width="50" 
+                        height="50"
+                        style="object-fit: cover;"
+                    />
+                    <h4 class="m-0">Face ID</h4>
                 </div>
+
                 <div class="d-flex gap-5 align-items-center">
-                    <img src="../../../assets/usb-icon.png" alt="detail image" width="75" height="75"/>
-                    <h4 class="m-0">test</h4>
+                    <img 
+                        src="../../../assets/usb-icon.png" 
+                        alt="detail image" 
+                        width="50" 
+                        height="50"
+                        style="object-fit: cover;"
+                    />
+                    <h4 class="m-0">ช่องต่อ USB-C</h4>
                 </div>
+
                 <div class="d-flex gap-5 align-items-center">
-                    <img src="../../../assets/cell-icon.png" alt="detail image" width="75" height="75"/>
-                    <h4 class="m-0">test</h4>
+                    <img 
+                        src="../../../assets/cell-icon.png" 
+                        alt="detail image" 
+                        width="50" 
+                        height="50"
+                        style="object-fit: cover;"
+                    />
+                    <h4 class="m-0">ระบบเซลลูลาร์ 5G</h4>
                 </div>
+
                 <div class="d-flex gap-5 align-items-center">
-                    <img src="../../../assets/pencil-icon.png" alt="detail image" width="75" height="75"/>
-                    <h4 class="m-0">test</h4>
+                    <img 
+                        src="../../../assets/pencil-icon.png" 
+                        alt="detail image" 
+                        width="50" 
+                        height="50"
+                        style="object-fit: cover;"
+                    />
+                    <h4 class="m-0">รองรับ Apple Pencil(รุ่นที่ 2)</h4>
                 </div>
+
                 <div class="d-flex gap-5 align-items-center">
-                    <img src="../../../assets/key-icon.png" alt="detail image" width="75" height="75"/>
-                    <h4 class="m-0">test</h4>
+                    <img 
+                        src="../../../assets/key-icon.png" 
+                        alt="detail image" 
+                        width="50" 
+                        height="50"
+                        style="object-fit: cover;"
+                    />
+                    <h4 class="m-0">รองรับ Magic Keyboard</h4>
                 </div>
 
             </div>
@@ -114,6 +191,7 @@
         </div>
     </div>
 </div>
+
 <div class="container mx-auto mt-5" *ngIf="category === 'iphone'" >
     <div class="row rounded shadow p-4 " *ngFor="let p of product">
             <div class="col-5 aliqn-self-center "> 
@@ -135,28 +213,70 @@
             </div>
             <div class="d-flex flex-column gap-3 mt-5">
                 <div class="d-flex gap-5 align-items-center">
-                    <img src="../../../assets/came-rel-icon.png" alt="detail image" width="75" height="75"/>
-                    <h4 class="m-0">test</h4>
+                    <img 
+                        src="../../../assets/came-rel-icon.png" 
+                        alt="detail image" 
+                        width="50" 
+                        height="50"
+                        style="object-fit: cover;"
+                    />
+                    <h4 class="m-0">ระบบกล้องระดับโปร
+                        กล้องหลักความละเอียด 48MP อัลตร้าไวด์เทเลโฟโต้</h4>
                 </div>
+
                 <div class="d-flex gap-5 align-items-center">
-                    <img src="../../../assets/face-icon.png" alt="detail image" width="75" height="75"/>
-                    <h4 class="m-0">test</h4>
+                    <img 
+                        src="../../../assets/face-icon.png" 
+                        alt="detail image" 
+                        width="50" 
+                        height="50"
+                        style="object-fit: cover;"
+                    />
+                    <h4 class="m-0">Face ID</h4>
                 </div>
+
                 <div class="d-flex gap-5 align-items-center">
-                    <img src="../../../assets/cell-icon.png" alt="detail image" width="75" height="75"/>
-                    <h4 class="m-0">test</h4>
+                    <img 
+                        src="../../../assets/cell-icon.png" 
+                        alt="detail image" 
+                        width="50" 
+                        height="50"
+                        style="object-fit: cover;"
+                    />
+                    <h4 class="m-0">ระบบเซลลูลาร์ 5G</h4>
                 </div>
+
                 <div class="d-flex gap-5 align-items-center">
-                    <img src="../../../assets/battery-icon.png" alt="detail image" width="75" height="75"/>
-                    <h4 class="m-0">test</h4>
+                    <img 
+                        src="../../../assets/battery-icon.png" 
+                        alt="detail image" 
+                        width="50" 
+                        height="50"
+                        style="object-fit: cover;"
+                    />
+                    <h4 class="m-0">เล่นวิดีโอนานสูงสุด 29 ชั่วโมง</h4>
                 </div>
+                
                 <div class="d-flex gap-5 align-items-center">
-                    <img src="../../../assets/chip-icon.png" alt="detail image" width="75" height="75"/>
-                    <h4 class="m-0">test</h4>
+                    <img 
+                        src="../../../assets/chip-icon.png" 
+                        alt="detail image" 
+                        width="50" 
+                        height="50"
+                        style="object-fit: cover;"
+                    />
+                    <h4 class="m-0">ชิป A16 Bionic</h4>
                 </div>
+
                 <div class="d-flex gap-5 align-items-center">
-                    <img src="../../../assets/sos-icon.png" alt="detail image" width="75" height="75"/>
-                    <h4 class="m-0">test</h4>
+                    <img 
+                        src="../../../assets/sos-icon.png" 
+                        alt="detail image" 
+                        width="50" 
+                        height="50"
+                        style="object-fit: cover;"
+                    />
+                    <h4 class="m-0">SOS ฉุกเฉิน</h4>
                 </div>
                 
 
@@ -165,6 +285,7 @@
         </div>
     </div>
 </div>
+
 <div class="container mx-auto mt-5" *ngIf="category === 'watch'" >
     <div class="row rounded shadow p-4 " *ngFor="let p of product">
             <div class="col-5 aliqn-self-center "> 
@@ -186,20 +307,47 @@
             </div>
             <div class="d-flex flex-column gap-3 mt-5">
                 <div class="d-flex gap-5 align-items-center">
-                    <img src="../../../assets/clock-icon.png" alt="detail image" width="75" height="75"/>
-                    <h4 class="m-0">test</h4>
+                    <img 
+                        src="../../../assets/clock-icon.png" 
+                        alt="detail image" 
+                        width="50" 
+                        height="50"
+                        style="object-fit: cover;"
+                    />
+                    <h4 class="m-0 fw-normal">จอภาพ Retinaสูงสุด 1,000 นิต</h4>
                 </div>
+
                 <div class="d-flex gap-5 align-items-center">
-                    <img src="../../../assets/sos-icon.png" alt="detail image" width="75" height="75"/>
-                    <h4 class="m-0">test</h4>
+                    <img 
+                        src="../../../assets/sos-icon.png" 
+                        alt="detail image" 
+                        width="50" 
+                        height="50"
+                        style="object-fit: cover;"
+                    />
+                    <h4 class="m-0 fw-normal">SOS ฉุกเฉิน</h4>
                 </div>
+
                 <div class="d-flex gap-5 align-items-center">
-                    <img src="../../../assets/cell2-icon.png" alt="detail image" width="75" height="75"/>
-                    <h4 class="m-0">test</h4>
+                    <img 
+                        src="../../../assets/cell2-icon.png" 
+                        alt="detail image" 
+                        width="50" 
+                        height="50"
+                        style="object-fit: cover;"
+                    />
+                    <h4 class="m-0 fw-normal">รองรับระบบเซลลูลาร์</h4>
                 </div>
+
                 <div class="d-flex gap-5 align-items-center">
-                    <img src="../../../assets/heart-icon.png" alt="detail image" width="75" height="75"/>
-                    <h4 class="m-0">test</h4>
+                    <img 
+                        src="../../../assets/heart-icon.png" 
+                        alt="detail image" 
+                        width="50" 
+                        50height="50"
+                        style="object-fit: cover;"
+                    />
+                    <h4 class="m-0 fw-normal">การแจ้งเตือนอัตราการเต้นของหัวใจเร็วและช้า</h4>
                 </div>
                
 
@@ -208,6 +356,7 @@
         </div>
     </div>
 </div>
+
 <div class="container mx-auto mt-5" *ngIf="category === 'airpods'" >
     <div class="row rounded shadow p-4 " *ngFor="let p of product">
             <div class="col-5 aliqn-self-center "> 
@@ -229,20 +378,47 @@
             </div>
             <div class="d-flex flex-column gap-3 mt-5">
                 <div class="d-flex gap-5 align-items-center">
-                    <img src="../../../assets/post-icon.png" alt="detail image" width="75" height="75"/>
-                    <h4 class="m-0">test</h4>
+                    <img 
+                        src="../../../assets/post-icon.png" 
+                        alt="detail image" 
+                        width="50" 
+                        height="50"
+                        style="object-fit: cover;"
+                    />
+                    <h4 class="m-0 fw-normal">test</h4>
                 </div>
+
                 <div class="d-flex gap-5 align-items-center">
-                    <img src="../../../assets/noise-cut-icon.png" alt="detail image" width="75" height="75"/>
-                    <h4 class="m-0">test</h4>
+                    <img 
+                        src="../../../assets/noise-cut-icon.png" 
+                        alt="detail image" 
+                        width="50" 
+                        height="50"
+                        style="object-fit: cover;"
+                    />
+                    <h4 class="m-0 fw-normal">test</h4>
                 </div>
+
                 <div class="d-flex gap-5 align-items-center">
-                    <img src="../../../assets/time-icon.png" alt="detail image" width="75" height="75"/>
-                    <h4 class="m-0">test</h4>
+                    <img 
+                        src="../../../assets/time-icon.png" 
+                        alt="detail image" 
+                        width="50" 
+                        height="50"
+                        style="object-fit: cover;"
+                    />
+                    <h4 class="m-0 fw-normal">test</h4>
                 </div>
+
                 <div class="d-flex gap-5 align-items-center">
-                    <img src="../../../assets/case-icon.png" alt="detail image" width="75" height="75"/>
-                    <h4 class="m-0">test</h4>
+                    <img 
+                        src="../../../assets/case-icon.png" 
+                        alt="detail image" 
+                        width="50" 
+                        50height="50"
+                        style="object-fit: cover;"
+                    />
+                    <h4 class="m-0 fw-normal">test</h4>
                 </div>
                 
 
