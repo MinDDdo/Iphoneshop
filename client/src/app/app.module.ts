@@ -1,3 +1,4 @@
+import { CarouselModule } from 'primeng/carousel';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -31,9 +32,11 @@ import { HomeComponent } from './pages/home/home.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

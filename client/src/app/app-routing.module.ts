@@ -6,15 +6,17 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { OrderDetailComponent } from './pages/order-detail/order-detail.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/productshow' },
+  { path: '', pathMatch: 'full', redirectTo: '/home' },
   { path: 'login', component: LoginComponent },
   { path: 'productshow', component: ProductshowComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'product-detail/:id', component: ProductDetailComponent },
-  { path: 'order-detail', component: OrderDetailComponent}
+  { path: 'order-detail', component: OrderDetailComponent},
+  { path: 'home', component: HomeComponent}
   
 ];
 
